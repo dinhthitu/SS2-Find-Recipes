@@ -42,8 +42,7 @@ website design
 
 <img width="1439" alt="Screen Shot 2025-06-17 at 22 42 16" src="https://github.com/user-attachments/assets/77ddc9aa-4a09-4c03-a660-7faa1a8fa2ad" />
 
-<img width="1439" alt="Screen Shot 2025-06-17 at 22 42 33" src="https://github.com/user-attachments/assets/332feb20-81c6-45c4-908a-ca96786edd1a" />
-
+<img width="566" alt="Screen Shot 2025-06-17 at 22 43 45" src="https://github.com/user-attachments/assets/24253bcf-474c-40ab-8fac-bb50ffd0e720" />
 
 
 Google Sign‑In Authentication: Secure login via Google OAuth2 using Firebase Authentication, allowing users to authenticate with Google accounts, manage sessions, and handle token refresh seamlessly.
@@ -78,6 +77,12 @@ website design
 
 website design 
 
+<img width="1440" alt="Screen Shot 2025-06-17 at 22 36 45" src="https://github.com/user-attachments/assets/1082e4b1-0ec6-461a-b269-bde4c6cb1055" />
+
+<img width="1440" alt="Screen Shot 2025-06-17 at 22 37 00" src="https://github.com/user-attachments/assets/e7ed8246-5425-4da2-8ead-6f6ef3ea4989" />
+
+<img width="1440" alt="Screen Shot 2025-06-17 at 22 37 16" src="https://github.com/user-attachments/assets/f032f9d0-a8e8-42fa-804b-33a777ad47fc" />
+
 
 - Name of the dish
 - Cooking time and number of servings
@@ -91,11 +96,15 @@ website design
 
 website design
 
-<img width="1440" alt="Screen Shot 2025-06-17 at 22 36 45" src="https://github.com/user-attachments/assets/1082e4b1-0ec6-461a-b269-bde4c6cb1055" />
+full ingredients
 
-<img width="1440" alt="Screen Shot 2025-06-17 at 22 37 00" src="https://github.com/user-attachments/assets/e7ed8246-5425-4da2-8ead-6f6ef3ea4989" />
+<img width="1440" alt="Screen Shot 2025-06-17 at 22 44 58" src="https://github.com/user-attachments/assets/86f74430-f21e-4116-a798-65b12a711116" />
 
-<img width="1440" alt="Screen Shot 2025-06-17 at 22 37 16" src="https://github.com/user-attachments/assets/f032f9d0-a8e8-42fa-804b-33a777ad47fc" />
+<img width="1440" alt="Screen Shot 2025-06-17 at 22 45 33" src="https://github.com/user-attachments/assets/a615922f-c348-491a-b483-072719041ad8" />
+
+single ingredient
+
+<img width="1439" alt="Screen Shot 2025-06-17 at 22 47 07" src="https://github.com/user-attachments/assets/968a8a50-0f9c-4e33-9dac-1be5ccd0788d" />
 
 
 - View full ingredient list or individual details.
