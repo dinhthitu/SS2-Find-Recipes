@@ -131,7 +131,7 @@ const Register = ({otp,setOtp}) => {
     <div className="w-full max-w-[600px] bg-white shadow-2xl rounded-2xl py-8 px-6">
     <div className="flex flex-col items-center gap-2 mb-6">
       <h2 className="font-bold text-[36px] text-[#B8324F]">Sign up</h2>
-      <p className="text-sm text-gray-500">Welcome to our blog magazine community</p>
+      <p className="text-sm text-gray-500">Welcome to Recipe Finder & Collection Manager</p>
     </div>
 
     <div className="w-full mb-6">
