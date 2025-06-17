@@ -4,7 +4,7 @@
 
 ## Project Overview
 
-Recipe Finder is a web application designed to help users discover and organize recipes based on available ingredients or recipe names. By integrating the Spoonacular API, the application provides robust recipe search functionality, user authentication, and personalized recipe management. Users can explore recipes tailored to their preferences, save favorites, and manage their ingredient lists, all within a mobile-responsive, user-friendly interface.
+Recipe Finder is a web application designed to help users discover and organize recipes based on available ingredients or recipe names. By integrating the Spoonacular API, the application provides robust recipe search functionality, user authentication, and personalized recipe management. Users can explore recipes tailored to their preferences, save favorites, and manage their ingredient lists, all within a mobile-responsive, user-friendly interface. Food-related news and articles are provided through NewsAPI, keeping users updated on culinary trends and cuisine stories.
 
 The main goal is to create an intuitive platform for food enthusiasts to find inspiration, manage their recipe collections, and explore detailed recipe information while ensuring secure user authentication and data privacy.
 
@@ -22,9 +22,14 @@ The main goal is to create an intuitive platform for food enthusiasts to find in
 - Data Privacy: All user information is securely stored and protected.
 
 #### Admin Features
-prototype demos
 
-https://github.com/user-attachments/assets/6cf6340c-fc12-48ba-93f3-a2c07b20b1ba
+website design
+
+<img width="1440" alt="Screen Shot 2025-06-17 at 22 30 28" src="https://github.com/user-attachments/assets/066d6c19-4d75-4978-9756-01d3ee487b60" />
+
+<img width="1438" alt="Screen Shot 2025-06-17 at 22 30 58" src="https://github.com/user-attachments/assets/85241e5e-4d70-4b1b-9f96-dcbf34611238" />
+
+<img width="1440" alt="Screen Shot 2025-06-17 at 22 31 22" src="https://github.com/user-attachments/assets/b1f90ece-468c-46c6-8e3c-4150cc5cfaa1" />
 
 
 - User Management: Add, edit, or delete user accounts.
@@ -33,9 +38,13 @@ https://github.com/user-attachments/assets/6cf6340c-fc12-48ba-93f3-a2c07b20b1ba
 #### User Features
 ###### Smart Recipe Search & Generation
 
-prototype demos
+website design
 
-<img width="286" alt="Screen Shot 2025-04-30 at 16 19 42" src="https://github.com/user-attachments/assets/622e4bcf-d76f-41bd-9a2f-038ce93a94b3" />
+<img width="1440" alt="Screen Shot 2025-06-17 at 22 33 54" src="https://github.com/user-attachments/assets/84bd68cc-dd0e-4deb-ad72-60b779630164" />
+
+<img width="1440" alt="Screen Shot 2025-06-17 at 22 34 29" src="https://github.com/user-attachments/assets/c548b862-777c-42f0-8fdd-bf90853e8d44" />
+
+<img width="1440" alt="Screen Shot 2025-06-17 at 22 34 56" src="https://github.com/user-attachments/assets/e3c76f4a-1253-4496-93e1-d75eadc6f830" />
 
 
 - Utilize the Spoonacular API to retrieve recipes based on user-selected ingredients or recipe name
@@ -44,9 +53,10 @@ prototype demos
 
 ###### Recipe Management
 
-prototype demos
+website design
 
-<img width="234" alt="Screen Shot 2025-04-30 at 16 20 46" src="https://github.com/user-attachments/assets/9fd4010f-fe74-42c0-a8a5-79d11d2973af" />
+<img width="1440" alt="Screen Shot 2025-06-17 at 22 35 20" src="https://github.com/user-attachments/assets/c0976b86-e5ce-432d-9f51-34bf602aae3d" />
+
 
 - Allow users to bookmark and organize favorite recipes for future reference
 - Enable easy removal of recipes from the wishlist when no longer needed
@@ -54,9 +64,8 @@ prototype demos
 
 ###### Recipe information displayed: When a user selects a recipe, the application will present:
 
-prototype demos
+website design 
 
-<img width="235" alt="Screen Shot 2025-04-30 at 16 20 12" src="https://github.com/user-attachments/assets/2a28bc9a-19bc-4e6c-8e62-a7ab2325d3a4" />
 
 - Name of the dish
 - Cooking time and number of servings
@@ -65,6 +74,33 @@ prototype demos
 - Step-by-step instructions
 - Nutritional information
 - Similar recipes
+
+###### Ingredient Insights: When a user selects a ingredient/view full ingredients, the application will present:
+
+website design
+
+<img width="1440" alt="Screen Shot 2025-06-17 at 22 36 45" src="https://github.com/user-attachments/assets/1082e4b1-0ec6-461a-b269-bde4c6cb1055" />
+
+<img width="1440" alt="Screen Shot 2025-06-17 at 22 37 00" src="https://github.com/user-attachments/assets/e7ed8246-5425-4da2-8ead-6f6ef3ea4989" />
+
+<img width="1440" alt="Screen Shot 2025-06-17 at 22 37 16" src="https://github.com/user-attachments/assets/f032f9d0-a8e8-42fa-804b-33a777ad47fc" />
+
+
+- View full ingredient list or individual details.
+- For each ingredient: name, image, description, reference price, and nutritional values per unit.
+
+###### Food News & Articles:
+
+website design
+
+<img width="1440" alt="Screen Shot 2025-06-17 at 22 37 59" src="https://github.com/user-attachments/assets/5c56c706-c352-415d-9536-5520af953b6c" />
+
+<img width="1427" alt="Screen Shot 2025-06-17 at 22 38 11" src="https://github.com/user-attachments/assets/300aff0f-2c72-4e4b-9e50-6e3ba4872cbc" />
+
+- Search by Tags: Nutrition, recipe, culinary culture, and more.
+- Featured Posts: Curated articles offering deep culinary insights. 
+- Latest Posts: Up‑to‑date news from trusted sources.
+- Filtered Browsing: Browse by culinary categories for personalized reading.
 
 ###### Mobile-Responsive UI
 - Design a fully responsive interface optimized for all device types
@@ -83,6 +119,7 @@ As a user, I want to:
 - Search for recipes using ingredients I have at home or by recipe names
 - View detailed recipe information, including introduction, visuals, cooking time, servings, ingredients and instructions.
 - Save and organize my favorite recipes for quick access.
+- Read and discover news and stories about culinary.
 
 As an admin, I want to:
 - Manage user accounts and their saved recipes efficiently.
@@ -109,11 +146,13 @@ React: JavaScript library for building dynamic UI components. Tailwind CSS: Util
 - Back-End
 Node.js: Runtime environment for server-side logic.
   
-- Firebase Authentication: Secure Google Sign-In integration.
+- OAuth2 Authentication (Google Sign‑In)
 
 - API Integration
 
 - Spoonacular API: Provides recipe search, ingredient data, and nutritional information.
+
+- NewsAPI (food and culinary articles)
 
 - Hosting
 Vite: Fast and modern build tool for deploying the application.
