@@ -44,6 +44,10 @@ website design
 
 <img width="566" alt="Screen Shot 2025-06-17 at 22 43 45" src="https://github.com/user-attachments/assets/24253bcf-474c-40ab-8fac-bb50ffd0e720" />
 
+Register
+
+<img width="1439" alt="Screen Shot 2025-06-17 at 23 10 53" src="https://github.com/user-attachments/assets/353655e8-1f62-4972-8945-e894b2beb6d7" />
+
 
 Google Sign‑In Authentication: Secure login via Google OAuth2 using Firebase Authentication, allowing users to authenticate with Google accounts, manage sessions, and handle token refresh seamlessly.
 
