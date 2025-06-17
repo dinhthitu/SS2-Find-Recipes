@@ -36,6 +36,18 @@ website design
 - Recipe Management: Admins can view or delete recipes on behalf of users.
 
 #### User Features
+###### User Authentication
+
+website design
+
+<img width="1439" alt="Screen Shot 2025-06-17 at 22 42 16" src="https://github.com/user-attachments/assets/77ddc9aa-4a09-4c03-a660-7faa1a8fa2ad" />
+
+<img width="1439" alt="Screen Shot 2025-06-17 at 22 42 33" src="https://github.com/user-attachments/assets/332feb20-81c6-45c4-908a-ca96786edd1a" />
+
+
+
+Google Sign‑In Authentication: Secure login via Google OAuth2 using Firebase Authentication, allowing users to authenticate with Google accounts, manage sessions, and handle token refresh seamlessly.
+
 ###### Smart Recipe Search & Generation
 
 website design
