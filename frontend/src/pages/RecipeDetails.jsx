@@ -77,19 +77,15 @@ const RecipeDetails = () => {
 
   const addToWishlist = async (recipeId) => {
     try {
-      const userRes = await getUserApi();
+      const userRes = await getUserApi(); 
       if (!userRes.success) {
         setError("Please login to add recipe to wishlist.");
-        toast.error("Please login to add recipe to wishlist.");
         return;
       }
       const response = await api.post(`/wishlist/wishlist/${recipeId}`);
-      setSimilarRecipesWishlist((prev) => ({ ...prev, [recipeId]: true }));
-      toast.success(response.data.message || "Recipe added to wishlist!");
+      alert("Recipe added to wishlist!");
     } catch (err) {
-      const errorMessage = err.response?.data?.message || "Failed to add recipe to wishlist";
-      setError(errorMessage);
-      toast.error(errorMessage);
+      setError(err.message || "Failed to add recipe to wishlist");
       console.error("Error adding to wishlist:", err);
     }
   };
