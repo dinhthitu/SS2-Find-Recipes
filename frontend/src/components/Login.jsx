@@ -75,8 +75,7 @@ const Login = () => {
         navigate("/login", { replace: true });
         return;
       }
-    
-      // Lấy token từ cookie
+
       const token = document.cookie
         .split('; ')
         .find(row => row.startsWith('token='))

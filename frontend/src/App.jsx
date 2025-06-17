@@ -3,7 +3,6 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import "./index.css";
 import { useSelector, useDispatch } from "react-redux";
 import { Toaster } from "react-hot-toast";
-import Store from "./redux/store";
 import { loadUserAction } from "./redux/actions/UserAction";
 import Header from "./components/Header";
 import Footer from "./components/Footer";

@@ -211,7 +211,6 @@ exports.getUserWishlist = async (req, res) => {
 };
 
 
-// admin
 exports.deleteRecipeFromWishlist = async (req, res) => {
   try {
     const { userId, recipeId } = req.params;

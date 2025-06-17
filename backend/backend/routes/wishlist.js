@@ -13,13 +13,13 @@ const {
 
 router.use(checkToken);
 
-// Routes for all authenticated users
+
 router.get("/wishlist", getWishlist);
 router.post("/wishlist/:recipeId", addToWishlist);
 router.delete("/wishlist/:recipeId", removeFromWishlist);
 router.get("/wishlist/check/:recipeId", checkInWishlist);
 
-// Routes for admins only
+
 router.get("/admin/:userId", isAdmin, getUserWishlist);
 router.delete("/admin/:userId/:recipeId", isAdmin, deleteRecipeFromWishlist);
 

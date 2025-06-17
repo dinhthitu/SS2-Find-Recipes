@@ -13,7 +13,7 @@ dotenv.config();
 
 const app = express();
 
-// Middleware
+
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -25,13 +25,13 @@ app.use(
   })
 );
 
-// Routes
+
 app.use("/api/users", usersRoute);
 app.use("/api/auth", googleAuthRoute);
 app.use("/api/wishlist", wishlistRoutes);
 app.use("/api/admin", adminRoutes);
 
-// Connect to DB
+
 (async () => {
   try {
     await db.sequelize.authenticate();
@@ -41,14 +41,14 @@ app.use("/api/admin", adminRoutes);
   }
 })();
 
-// Error handling
+
 app.use((err, req, res, next) => {
   const status = err.status || 500;
   const message = err.message || "Something went wrong";
   res.status(status).json({ success: false, message });
 });
 
-// Start server
+
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);

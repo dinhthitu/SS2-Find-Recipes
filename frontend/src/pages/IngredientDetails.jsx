@@ -17,16 +17,15 @@ const IngredientDetails = () => {
       }
 
       try {
-        // Fetch recipe information to get ingredients
         const recipeResponse = await fetch(
           `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}&includeNutrition=true`
         );
         if (!recipeResponse.ok) {
           throw new Error(`Failed to fetch recipe: ${await recipeResponse.text()}`);
         }
-        const recipeData = await recipeResponse.json(); // Fixed: Use recipeResponse instead of response
+        const recipeData = await recipeResponse.json();
 
-        // Fetch detailed information for each ingredient
+
         const ingredientDetails = await Promise.all(
           recipeData.extendedIngredients.map(async (ingredient) => {
             try {
@@ -61,7 +60,6 @@ const IngredientDetails = () => {
           );
           if (!priceResponse.ok) {
             console.warn(`Failed to fetch price breakdown: ${await priceResponse.text()}`);
-            // Fallback: Calculate total cost from ingredient estimatedCost
             const totalCost = ingredientDetails.reduce(
               (sum, ing) => sum + (ing.estimatedCost?.value || 0),
               0
@@ -73,7 +71,6 @@ const IngredientDetails = () => {
           }
         } catch (priceErr) {
           console.warn("Error fetching price breakdown:", priceErr);
-          // Fallback: Calculate total cost from ingredient estimatedCost
           const totalCost = ingredientDetails.reduce(
             (sum, ing) => sum + (ing.estimatedCost?.value || 0),
             0

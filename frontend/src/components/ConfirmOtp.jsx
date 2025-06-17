@@ -1,15 +1,14 @@
 
 import { Form, Input } from 'antd'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router'
-import Cookies from 'js-cookie';  // Import thư viện js-cookie
 import { checkTokenOtp } from '../../Axios/client/api';
 
 const ConfirmOtp = ({otp,setOtp}) => {
 
   const [form] = Form.useForm()
-  const navigate = useNavigate();  // Để điều hướng trang
+  const navigate = useNavigate();  
 
   const handleFinish = async(e)=>{
      const res =await checkTokenOtp(e)

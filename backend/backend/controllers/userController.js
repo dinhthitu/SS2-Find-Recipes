@@ -128,7 +128,6 @@ const updateUser = async (req, res, next) => {
     const { id } = req.params;
     const { username, email, password, savedRecipes } = req.body;
 
-    // Find the user by ID
     const user = await User.findByPk(id);
     if (!user) {
       return res.status(404).json({

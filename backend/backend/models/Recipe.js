@@ -7,9 +7,9 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         autoIncrement: true,
       },
-      spoonacularId: { // Thêm cột mới để lưu ID từ Spoonacular
+      spoonacularId: { 
         type: DataTypes.INTEGER,
-        unique: true, // Đảm bảo không trùng lặp
+        unique: true, 
         allowNull: true,
       },
       title: {
@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         field: 'UserId',
       },
-      imageUrl: { // Thêm cột mới để lưu URL hình ảnh
+      imageUrl: { 
         type: DataTypes.STRING,
         allowNull: true,
       },

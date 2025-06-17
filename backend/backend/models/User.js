@@ -26,11 +26,11 @@ module.exports = (sequelize, DataTypes) => {
       },
       avatar: {
         type: DataTypes.STRING,
-        allowNull: true, // Lưu URL của avatar từ Google
+        allowNull: true, 
       },
       password: {
         type: DataTypes.STRING,
-        allowNull: true, // Allow null for Google auth users
+        allowNull: true, 
       },
       googleId: {
         type: DataTypes.STRING,

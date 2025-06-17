@@ -22,7 +22,7 @@ useEffect(() => {
   if (err) {
    toast.error("Please Register first")
   }
-}, [location.search]); // Chạy lại khi URL thay đổi
+}, [location.search]); 
 
 
   return (

@@ -3,17 +3,17 @@ const bcrypt = require('bcrypt');
 
 async function createAdmin() {
   try {
-    // Kết nối và đồng bộ cơ sở dữ liệu
+
     await sequelize.sync({ force: false });
 
-    // Kiểm tra xem admin đã tồn tại chưa
+
     const existingAdmin = await User.findOne({ where: { email: 'admin@example.com' } });
     if (existingAdmin) {
       console.log('Tài khoản admin đã tồn tại!');
       return;
     }
 
-    // Tạo tài khoản admin
+ 
     await User.create({
       username: 'admin',
       email: 'admin@example.com',

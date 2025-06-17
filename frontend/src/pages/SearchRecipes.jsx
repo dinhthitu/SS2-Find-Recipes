@@ -1,9 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.jpeg";
-import moreIcon from "../assets/more.png";
-import closeIcon from "../assets/delete.png";
-import arrowIcon from "../assets/arrow.png";
 import SearchBackGround from "../assets/SearchBackGround.png";
 import api from "../utils/api";
 import { getUserApi } from "../utils/api";
@@ -18,7 +14,6 @@ const SearchRecipes = () => {
   const [errorRecommended, setErrorRecommended] = useState("");
   const [loadingSearch, setLoadingSearch] = useState(false);
   const [loadingRecommended, setLoadingRecommended] = useState(false);
-  const [showMenu, setShowMenu] = useState(false);
   const searchRef = useRef(null);
   const searchInputRef = useRef(null);
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import api from "../api"; // Adjust path if needed
+import api from "../api"; 
 
 function RecipeCard({ recipe }) {
   const [inWishlist, setInWishlist] = useState(false);

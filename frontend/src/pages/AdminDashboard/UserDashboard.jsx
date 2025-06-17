@@ -37,7 +37,7 @@ const UserDashboard = ({ users, usersLoading }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const usersPerPage = 10;
 
-  // Filter users by search term (id or username)
+
   const filteredUsers = users.filter((user) =>
     user.username.toLowerCase().includes(searchTerm.toLowerCase()) ||
     user.id.toString().includes(searchTerm)

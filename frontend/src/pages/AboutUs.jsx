@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import familyImg from '../assets/about_img/family1.jpg';
 import chefImg from '../assets/about_img/chef.jpeg';
 import familyImage from '../assets/about_img/family2.jpg';

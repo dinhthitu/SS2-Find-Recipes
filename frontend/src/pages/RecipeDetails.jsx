@@ -6,7 +6,7 @@ import clock from "../assets/clock.png";
 import people from "../assets/people.png";
 import heartIcon from "../assets/heart-icon.png";
 import share from "../assets/share.png";
-import toast from "react-hot-toast"; // Add this import
+import toast from "react-hot-toast";
 
 const RecipeDetails = () => {
   const { id } = useParams();
@@ -14,6 +14,7 @@ const RecipeDetails = () => {
   const [similarRecipes, setSimilarRecipes] = useState([]);
   const [error, setError] = useState("");
   const [isInWishlist, setIsInWishlist] = useState(false);
+  const [similarRecipesWishlist, setSimilarRecipesWishlist] = useState({}); 
 
   const apiKey = import.meta.env.VITE_SPOONACULAR_API_KEY;
 
@@ -25,10 +26,29 @@ const RecipeDetails = () => {
         return;
       }
       const response = await api.get(`/wishlist/wishlist/${id}/check`);
-      setIsInWishlist(response.isInWishlist);
+      setIsInWishlist(response.data.isInWishlist); 
     } catch (err) {
       console.error("Error checking wishlist:", err);
       setError("Failed to check wishlist. Please try again.");
+    }
+  };
+
+  const checkSimilarRecipesWishlist = async (recipeIds) => {
+    try {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        return;
+      }
+      const wishlistStatus = {};
+      await Promise.all(
+        recipeIds.map(async (recipeId) => {
+          const response = await api.get(`/wishlist/wishlist/${recipeId}/check`);
+          wishlistStatus[recipeId] = response.data.isInWishlist;
+        })
+      );
+      setSimilarRecipesWishlist(wishlistStatus);
+    } catch (err) {
+      console.error("Error checking wishlist for similar recipes:", err);
     }
   };
 
@@ -43,15 +63,34 @@ const RecipeDetails = () => {
       if (isInWishlist) {
         const response = await api.delete(`/wishlist/wishlist/${id}`);
         setIsInWishlist(false);
-        toast.success(response.message || "Recipe removed from wishlist");
+        toast.success(response.data.message || "Recipe removed from wishlist");
       } else {
         const response = await api.post(`/wishlist/wishlist/${id}`);
         setIsInWishlist(true);
-        toast.success(response.message || "Recipe added to wishlist");
+        toast.success(response.data.message || "Recipe added to wishlist");
       }
     } catch (err) {
       const errorMessage = err.response?.data?.message || "Failed to update wishlist";
       toast.error(errorMessage);
+    }
+  };
+
+  const addToWishlist = async (recipeId) => {
+    try {
+      const userRes = await getUserApi();
+      if (!userRes.success) {
+        setError("Please login to add recipe to wishlist.");
+        toast.error("Please login to add recipe to wishlist.");
+        return;
+      }
+      const response = await api.post(`/wishlist/wishlist/${recipeId}`);
+      setSimilarRecipesWishlist((prev) => ({ ...prev, [recipeId]: true }));
+      toast.success(response.data.message || "Recipe added to wishlist!");
+    } catch (err) {
+      const errorMessage = err.response?.data?.message || "Failed to add recipe to wishlist";
+      setError(errorMessage);
+      toast.error(errorMessage);
+      console.error("Error adding to wishlist:", err);
     }
   };
 
@@ -98,6 +137,8 @@ const RecipeDetails = () => {
               })
             );
             setSimilarRecipes(comparableRecipesWithNutrition || []);
+            // Check wishlist status for similar recipes
+            checkSimilarRecipesWishlist(comparableRecipesWithNutrition.map((r) => r.id));
           }
         } catch (similarErr) {
           console.warn("Error fetching similar recipes:", similarErr);
@@ -119,10 +160,10 @@ const RecipeDetails = () => {
     try {
       const url = window.location.href;
       await navigator.clipboard.writeText(url);
-      alert("Link copied!");
+      toast.success("Link copied!");
     } catch (err) {
       console.error("Failed to copy the link:", err);
-      alert("Failed to copy the link. Please copy it manually.");
+      toast.error("Failed to copy the link. Please copy it manually.");
     }
   };
 
@@ -313,7 +354,14 @@ const RecipeDetails = () => {
                           >
                             See Recipe
                           </Link>
-                          <button className="flex items-center gap-1 text-gray-600 hover:text-red-500">
+                          <button
+                            onClick={() => addToWishlist(similarRecipe.id)}
+                            className={`flex items-center gap-1 ${
+                              similarRecipesWishlist[similarRecipe.id]
+                                ? "text-red-600"
+                                : "text-gray-600 hover:text-red-500"
+                            }`}
+                          >
                             <svg
                               className="w-5 h-5"
                               fill="none"
@@ -328,7 +376,7 @@ const RecipeDetails = () => {
                                 d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
                               ></path>
                             </svg>
-                            <span className="text-sm">Save</span>
+                            <span className="text-sm">{similarRecipesWishlist[similarRecipe.id] ? "Saved" : "Save"}</span>
                           </button>
                         </div>
                       </div>
